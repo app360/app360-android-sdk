@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/layout_des"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal"
+        android:padding="0dp">
+
+        <vn.mog.app360.sdk.payment.widget.MworkTextView
+            android:id="@+id/com_mwork_text_number"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="2"
+            android:gravity="center_vertical|left"
+            android:textColor="@android:color/black"
+            android:textSize="15sp" />
+
+        <vn.mog.app360.sdk.payment.widget.MworkTextView
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical|center"
+            android:paddingLeft="10dp"
+            android:text="-->"
+            android:textColor="@android:color/black"
+            android:textSize="15sp" />
+
+        <vn.mog.app360.sdk.payment.widget.MworkTextView
+            android:id="@+id/com_mwork_text_amount"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:gravity="center|right"
+            android:textColor="@android:color/black"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_below="@+id/layout_des"
+        android:layout_marginTop="1dp"
+        android:background="@color/com_mwork_gray" />
+</RelativeLayout><!-- From: file:/home/h1volt3/AndroidStudioProjects/App360/app360sdk/src/main/res/layout/com_mwork_des_button.xml -->

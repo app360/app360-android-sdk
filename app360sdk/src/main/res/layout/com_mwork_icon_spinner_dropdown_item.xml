@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:mwork="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/boder_layout"
+    android:orientation="horizontal"
+    style="?android:attr/spinnerDropDownItemStyle">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:id="@+id/com_mwork_img_flag"
+        android:layout_marginLeft="4dp" />
+
+    <vn.mog.app360.sdk.payment.widget.MworkCheckedTextView
+        android:id="@+id/com_mwork_text_lang"
+        android:singleLine="true"
+        android:layout_marginLeft="8dp"
+        android:textColor="@android:color/black"
+        android:layout_width="match_parent"
+        android:gravity="center_vertical"
+        mwork:typeface="Roboto-Light.ttf"
+        android:layout_height="48dp"
+        android:ellipsize="marquee" />
+</LinearLayout><!-- From: file:/home/h1volt3/AndroidStudioProjects/App360/app360sdk/src/main/res/layout/com_mwork_icon_spinner_dropdown_item.xml -->

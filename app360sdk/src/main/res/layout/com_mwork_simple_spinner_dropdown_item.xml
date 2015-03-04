@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vn.mog.app360.sdk.payment.widget.MworkCheckedTextView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:mwork="http://schemas.android.com/apk/res-auto"
+    android:id="@android:id/text1"
+    style="?android:attr/spinnerDropDownItemStyle"
+    android:layout_width="match_parent"
+    android:layout_height="48dp"
+    android:ellipsize="marquee"
+    android:singleLine="true"
+    mwork:typeface="Roboto-Light.ttf" />
+<!-- From: file:/home/h1volt3/AndroidStudioProjects/App360/app360sdk/src/main/res/layout/com_mwork_simple_spinner_dropdown_item.xml -->

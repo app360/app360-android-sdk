@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:mwork="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+    android:background="@color/com_mwork_payment_bg">
+
+    <ProgressBar
+        android:id="@+id/com_mwork_loading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="visible"/>
+
+    <vn.mog.app360.sdk.payment.widget.MworkButton
+        android:id="@+id/com_mwork_btn_retry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="@string/com_mwork_retry"
+        mwork:typeface="Roboto-Light.ttf"
+        android:visibility="gone"/>
+
+    <LinearLayout
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_alignParentTop="true">
+
+        <RelativeLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_alignParentTop="true"
+            android:id="@+id/com_mwork_layout_top"
+            android:background="@android:color/white">
+
+            <ImageView
+                android:layout_height="32dp"
+                android:layout_width="32dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:layout_margin="10dp"
+                android:src="@drawable/com_mwork_ic_back"
+                android:id="@+id/com_mwork_app_icon"/>
+
+            <LinearLayout
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_toRightOf="@+id/com_mwork_app_icon"
+                android:layout_toLeftOf="@+id/com_mwork_btn_refresh"
+                android:layout_centerInParent="true"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp"
+                android:orientation="vertical">
+
+                <vn.mog.app360.sdk.payment.widget.MworkTextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/com_mwork_pay_via_sms"
+                    android:textColor="@android:color/black"
+                    android:textSize="18dp"
+                    android:textStyle="bold"/>
+
+            </LinearLayout>
+
+            <ImageButton
+                android:layout_height="32dp"
+                android:layout_width="32dp"
+                android:src="@drawable/com_mwork_ic_refresh"
+                android:background="@drawable/com_mwork_button_click"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_margin="10dp"
+                android:id="@+id/com_mwork_btn_refresh"/>
+
+        </RelativeLayout>
+
+        <ScrollView
+            android:id="@+id/com_mwork_layout_sms"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/com_mwork_logo"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/com_mwork_layout_syntax"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:paddingBottom="10dp"
+                    android:background="@color/com_mwork_payment_bg"
+                    android:visibility="gone">
+
+                    <vn.mog.app360.sdk.payment.widget.MworkTextView
+                        android:id="@+id/com_mwork_sms_syntax_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerInParent="true"
+                        android:text="@string/com_mwork_sms_syntax"
+                        android:layout_margin="10dp"
+                        mwork:typeface="Roboto-Light.ttf"
+                        android:textColor="@color/com_mwork_button_bg"
+                        android:textSize="15sp" />
+
+                    <vn.mog.app360.sdk.payment.widget.MworkTextView
+                        android:id="@+id/com_mwork_sms_syntax"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_below="@+id/com_mwork_sms_syntax_title"
+                        android:text="@string/com_mwork_sms_syntax"
+                        android:textColor="@android:color/black"
+                        android:textSize="20sp"
+                        android:textStyle="bold"/>
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@drawable/dark_line"
+                        android:contentDescription="@string/com_mwork_details"/>
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/com_mwork_sms_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:orientation="vertical"></LinearLayout>
+
+
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+
+    <!-- <include
+         android:id="@+id/com_mwork_logo"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:layout_alignParentBottom="true"
+         layout="@layout/com_mwork_payment_logo"
+         android:visibility="visible"/>-->
+
+</RelativeLayout><!-- From: file:/home/h1volt3/AndroidStudioProjects/App360/app360sdk/src/main/res/layout/com_mwork_activity_sms.xml -->
