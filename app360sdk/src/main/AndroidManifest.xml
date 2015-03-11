@@ -14,13 +14,22 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/ic_launcher"
-        android:theme="@style/Theme.mwork" >
-        <activity android:name="vn.mog.app360.sdk.payment.activities.CardActivity" />
-        <activity android:name="vn.mog.app360.sdk.payment.activities.BankActivity" />
-        <activity android:name="vn.mog.app360.sdk.payment.activities.SmsActivity" />
-        <activity android:name="vn.mog.app360.sdk.payment.activities.BankWebviewActivity" />
-        <activity android:name="vn.mog.app360.sdk.payment.activities.PaymentFormActivity" />
+        android:icon="@drawable/ic_launcher" >
+        <activity
+            android:name="vn.mog.app360.sdk.payment.activities.CardActivity"
+            android:theme="@style/Theme.mwork" />
+        <activity
+            android:name="vn.mog.app360.sdk.payment.activities.BankActivity"
+            android:theme="@style/Theme.mwork" />
+        <activity
+            android:name="vn.mog.app360.sdk.payment.activities.SmsActivity"
+            android:theme="@style/Theme.mwork" />
+        <activity
+            android:name="vn.mog.app360.sdk.payment.activities.BankWebviewActivity"
+            android:theme="@style/Theme.mwork" />
+        <activity
+            android:name="vn.mog.app360.sdk.payment.activities.PaymentFormActivity"
+            android:theme="@style/Theme.mwork" />
     </application>
 
 </manifest>

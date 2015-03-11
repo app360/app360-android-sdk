@@ -54,7 +54,7 @@ The demo project is compatible with latest versions of both Android Studio and E
 To import the project into Eclipse, choose _File > Import..._, then inside the _Import_ dialog, choose _General > Existing projects into workspace_, then in _Select root directory_, browse to the repository. **Select all** projects that Eclipse detected, then click _Finish_. There're a lot of library projects, but they're necessary to support the demo (including Google Play Services for Google login, Facebook SDK for Facebook login, Android support libraries and some UI libraries).
 
 ![Eclipse import 1](http://i.imgur.com/ryT1Bqk.png)
-![Eclipse import 2](http://i.imgur.com/dm2LzUK.png)
+![Eclipse import 2](http://i.imgur.com/LvXZzG4.png)
 
 Open LoginActivity inside demo project, find `App360.initialize("appId", "appSecret", ...)` line and replace the placeholders with your application credentials.
 
@@ -62,9 +62,14 @@ Run the project. The app demonstrates capability of App360 SDK, including app-sc
 
 # Add App360 SDK to your project
 
-To import the SDK into your Eclipse project, repeat the same steps for importing demo project, except that in the last step, just select `paymentsdk-release` project. Right-click on your project, choose _Properties_, inside _Android > Library_, add `paymentsdk-release` as a library project dependency.
+To import the SDK into your Eclipse project, repeat the same steps for importing demo project, except that in the last step, just select `app360sdk` project. Right-click on your project, choose _Properties_, inside _Android > Library_, add `app360sdk` as a library project dependency.
 
-To import the SDK into Android Studio, choose _File > New Module..._, in _More modules_, choose _Import .JAR or .AAR package_, then browse to file `paymentsdk-release.aar` inside `paymentsdk` directory of the repository. Click _Finish_ and you're done.
+To import the SDK into Android Studio, follows these steps:
+
+1. Choose _File > Import Module..._, then browse to `app360sdk` directory inside the repository. Click _Finish_ and wait until the import is completed.
+   ![AS import 1](http://i.imgur.com/62OtAPu.png)
+2. Open _File > Project Structure..._, select your application module, select _Dependencies_ tab, press the plus (+) symbol in the top-right corner, select _Module dependency_, then select `app360sdk`.
+   ![AS import 2](http://i.imgur.com/7GX9wjD.png)
 
 #Integrate your application with App360 SDK
 

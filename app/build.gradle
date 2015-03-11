@@ -61,3 +61,4 @@ task buildSDKRelease(type: Exec) {
 
 exportDependenciesJars.dependsOn assembleDebug
 buildSDKRelease.dependsOn exportDependenciesJars
+buildSDKRelease.dependsOn ':app360sdk:androidJavadocsJar'
