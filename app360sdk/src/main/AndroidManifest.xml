@@ -12,8 +12,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.SEND_SMS" />
 
-    <application
-        android:allowBackup="true">
+    <application android:allowBackup="true" >
         <activity
             android:name="vn.mog.app360.sdk.payment.activities.CardActivity"
             android:theme="@style/Theme.mwork" />

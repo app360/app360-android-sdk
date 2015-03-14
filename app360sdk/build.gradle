@@ -22,17 +22,20 @@ android {
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'src/main/libs')
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     compile 'com.android.support:support-v4:21.0.2'
     compile 'com.squareup.retrofit:retrofit:1.8.0'
-    compile 'com.squareup.okhttp:okhttp:2.1.0'
-    compile 'com.squareup.okhttp:okhttp-urlconnection:2.1.0'
+}
+
+task exportDependenciesJars(type: Copy) {
+    into "src/main/libs"
+    from configurations.compile
 }
 
 task androidJavadocs(type: Javadoc) {
     source = android.sourceSets.main.java.srcDirs
     classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
-    exclude ('**/utils/**', '**/widget/**', '**/commons/**')
+    exclude('**/utils/**', '**/widget/**', '**/commons/**')
     options.noTimestamp true
 }
 
