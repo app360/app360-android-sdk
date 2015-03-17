@@ -394,7 +394,7 @@ Trong trường hợp bạn có những vấn đề về kỹ thuật, vui lòng
 Vui lòng cung cấp những thông tin sau khi liên hệ, chúng sẽ giúp chúng tôi hỗ trợ bạn nhanh hơn rất nhiều.
 
 - **Phiên bản của SDK** bạn đang sử dụng. Bạn có thể biết được phiên bản của SDK thông qua việc gọi hàm `App360SDK.getVersion()`.
-- **Môi trường** có thể tái hiện lại vấn đề (máy ảo hay thiết bị? thiết bị gì? iOS phiên bản bao nhiêu?)
+- **Môi trường** sử dụng để có thể tái hiện lại vấn đề (máy ảo hay thiết bị thật, model nào, android version bao nhiêu).
 - **Các bước** để tái hiện vấn đề.
 - Nếu có thể, bạn hãy cung cấp **một vài đoạn code**, thậm chí cả project nếu có thể.
 
