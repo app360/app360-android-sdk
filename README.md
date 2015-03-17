@@ -1,3 +1,5 @@
+**Other language**: [Vietnamese](https://github.com/app360/app360-android-sdk/blob/master/README-VI.md)
+
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
  
@@ -148,7 +150,7 @@ public interface InitListener {
 During initialization, the SDK will try to find and re-opened any cached app-scoped ID session. If the application hasn't opened any session, `SessionManager.getCurrentSession()` will return null and the application should open a new session.
 
 ```java
-M360SDK.initialize("appID", "appSecret", getApplicationContext(), new InitListener() {
+App360SDK.initialize("appID", "appSecret", getApplicationContext(), new InitListener() {
     @Override
     public void onSuccess() {
         SessionService.Session session = SessionManager.getCurrentSession();
@@ -272,11 +274,11 @@ There are two methods to integrate payment functionality of App360 SDK into your
 To use payment form UI, you need to add the following activities to your manifest (if manifestmerger is diabled):
 
 ```xml
-<activity android:name="vn.mog.m360.sdk.payment.activities.CardActivity" />
-<activity android:name="vn.mog.m360.sdk.payment.activities.BankActivity" />
-<activity android:name="vn.mog.m360.sdk.payment.activities.SmsActivity" />
-<activity android:name="vn.mog.m360.sdk.payment.activities.BankWebviewActivity"/>
-<activity android:name="vn.mog.m360.sdk.payment.activities.PaymentFormActivity" />
+<activity android:name="vn.mog.app360.sdk.payment.activities.CardActivity" />
+<activity android:name="vn.mog.app360.sdk.payment.activities.BankActivity" />
+<activity android:name="vn.mog.app360.sdk.payment.activities.SmsActivity" />
+<activity android:name="vn.mog.app360.sdk.payment.activities.BankWebviewActivity"/>
+<activity android:name="vn.mog.app360.sdk.payment.activities.PaymentFormActivity" />
 ```
 
 To display the payment UI, build a `PaymentForm` via a `PaymentForm.Builder`. For example:
