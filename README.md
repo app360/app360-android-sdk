@@ -100,7 +100,7 @@ App360 SDK needs the following permissions:
 
 ## Assets
 
-In order to support channeling, the application's `assets` directory should contain a properties file named `m360.properties`. The file should contain two keys `channel` and `sub_channel`. `channel` is distribution channel such as `mwork`, `appota` while `sub_channel` is arbitrary string defined by the distribution channel itself.
+In order to support channeling, the application's `assets` directory should contain a properties file named `app360.properties`. The file should contain two keys `channel` and `sub_channel`. `channel` is distribution channel such as `mwork`, `appota` while `sub_channel` is arbitrary string defined by the distribution channel itself.
 
 ## Other SDKs
 
@@ -219,7 +219,7 @@ private class SessionCallback implements SessionManager.SessionCallback {
 
 ### Note on channeling
 
-Channeling is done per app-scoped ID. In other words, the channel of a payment equals to the channel of the app-scoped user that orders such payment. Moreover, an app-scoped user's channel is decided at _creation_ and equals to the channel specified in `m360.properties` of the build that creates it. So:
+Channeling is done per app-scoped ID. In other words, the channel of a payment equals to the channel of the app-scoped user that orders such payment. Moreover, an app-scoped user's channel is decided at _creation_ and equals to the channel specified in `app360.properties` of the build that creates it. So:
 
 - If you want channeling be done on user level, you should synchronize your app's users with app-scoped ID (i.e. set your app's user ID as `scopedId` in `public static void createSession(String scopedId, SessionCallback callback);`
 - If you want channeling be done on device level, you should set device ID as `scopedId` in `public static void createSession(String scopedId, SessionCallback callback);`

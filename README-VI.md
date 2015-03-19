@@ -99,7 +99,7 @@ App360 SDK cần những quyền sau:
 
 ## Assets
 
-Để hỗ trợ mô hình channeling, thư mục `assets` của ứng dụng cần một file property với tên `m360.properties`. File này chứa hai key là `channel` and `sub_channel`. `channel` là kênh phân phối, ví dụ như `mwork`, `appota` còn `sub_channel` là một chuỗi bất kì được định nghĩa bới kênh phân phối.
+Để hỗ trợ mô hình channeling, thư mục `assets` của ứng dụng cần một file property với tên `app360.properties`. File này chứa hai key là `channel` and `sub_channel`. `channel` là kênh phân phối, ví dụ như `mwork`, `appota` còn `sub_channel` là một chuỗi bất kì được định nghĩa bới kênh phân phối.
 
 ## Các SDK khác
 
@@ -218,7 +218,7 @@ private class SessionCallback implements SessionManager.SessionCallback {
 
 ### Chú ý về channeling
 
-Channeling đã được hỗ trợ qua app-scoped ID. Nói theo cách khác, channel của một giao dịch thanh toán bằng với channel của appscoped user thực hiện thanh toán đó. Hơn nữa, chanel của một app-scoped user được quyết định khi _khởi tạo_ và bằng với channel được đặt trong file `m360.properties` trong bản build mà user đăng ký. Do đó:
+Channeling đã được hỗ trợ qua app-scoped ID. Nói theo cách khác, channel của một giao dịch thanh toán bằng với channel của appscoped user thực hiện thanh toán đó. Hơn nữa, chanel của một app-scoped user được quyết định khi _khởi tạo_ và bằng với channel được đặt trong file `app360.properties` trong bản build mà user đăng ký. Do đó:
 
 - Nếu bạn muốn cơ chế channeling theo user, bạn cần đồng bộ user của bạn với app-scoped ID (ví dụ: đặt user id trong ứng dụng của bạn làm `scopedId` trong `public static void createSession(String scopedId, SessionCallback callback);`
 - Nếu bạn muốn cơ chế channeling theo device, bạn nên đặt device ID làm `scopedId` trong `public static void createSession(String scopedId, SessionCallback callback);`
