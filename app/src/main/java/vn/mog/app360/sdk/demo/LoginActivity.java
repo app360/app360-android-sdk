@@ -51,7 +51,7 @@ public class LoginActivity extends BaseActivity {
 
         @Override
         public void onFailure(Exception e) {
-            Log.d(TAG, "Save failed");
+            Log.d(TAG, "Save failed", e);
             Toast.makeText(LoginActivity.this, "Link denied", Toast.LENGTH_SHORT).show();
         }
     };
@@ -67,7 +67,7 @@ public class LoginActivity extends BaseActivity {
 
         @Override
         public void onFailure(Exception e) {
-            Log.d(TAG, "Save failed");
+            Log.d(TAG, "Save failed", e);
         }
     };
     private final FacebookListener facebookListener = new FacebookListener() {
