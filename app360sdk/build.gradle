@@ -2,7 +2,7 @@ apply plugin: 'com.android.library'
 
 android {
     compileSdkVersion 21
-    buildToolsVersion "21.1.1"
+    buildToolsVersion "21.1.2"
 
     defaultConfig {
         minSdkVersion 14
@@ -23,7 +23,7 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:support-v4:21.0.2'
+    compile 'com.android.support:support-v4:21.0.3'
     compile 'com.squareup.retrofit:retrofit:1.8.0'
     compile 'com.squareup.okhttp:okhttp-urlconnection:2.3.0'
 }
@@ -33,16 +33,26 @@ task exportDependenciesJars(type: Copy) {
     from configurations.compile
 }
 
-task androidJavadocs(type: Javadoc) {
-    source = android.sourceSets.main.java.srcDirs
-    classpath += project.files(android.getBootClasspath().join(File.pathSeparator)) + configurations.compile
-    exclude('**/utils/**', '**/widget/**', '**/commons/**')
-    options.noTimestamp true
+android.libraryVariants.all { variant ->
+    task("generate${variant.name.capitalize()}Javadoc", type: Javadoc) {
+        dependsOn "compile${variant.name.capitalize()}Sources"
+        source = variant.javaCompile.source
+        classpath = files(variant.javaCompile.classpath.files, project.android.getBootClasspath(), variant.javaCompile.destinationDir)
+        options {
+            links "http://docs.oracle.com/javase/7/docs/api/"
+            linksOffline "http://d.android.com/reference", "${android.sdkDirectory}/docs/reference"
+            noTimestamp true
+        }
+        exclude('**/utils/**', '**/widget/**', '**/commons/**')
+        exclude '**/BuildConfig.java'
+        exclude '**/R.java'
+    }
 }
 
-task androidJavadocsJar(type: Jar, dependsOn: androidJavadocs) {
+task androidJavadocsJar(type: Jar) {
+    dependsOn "generateReleaseJavadoc"
     classifier = 'javadoc'
-    from androidJavadocs.destinationDir
+    from "generateReleaseJavadoc.destinationDir"
 }
 
 artifacts {
