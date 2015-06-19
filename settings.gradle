@@ -1,2 +1,4 @@
 include ':app'
 include ':app360sdk'
+include ':app360sdkpaymentui'
+include ':app360Wrapper'

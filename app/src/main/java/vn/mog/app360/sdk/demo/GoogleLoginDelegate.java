@@ -6,11 +6,12 @@ import android.app.Dialog;
 import android.content.Intent;
 import android.widget.Toast;
 
-import vn.mog.app360.sdk.demo.logger.Log;
 import com.google.android.gms.auth.GooglePlayServicesAvailabilityException;
 import com.google.android.gms.auth.UserRecoverableAuthException;
 import com.google.android.gms.common.AccountPicker;
 import com.google.android.gms.common.GooglePlayServicesUtil;
+
+import vn.mog.app360.sdk.demo.logger.Log;
 
 public class GoogleLoginDelegate {
     private static final String TAG = "GoogleLoginDelegate";

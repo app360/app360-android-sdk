@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/com_mwork_btn_show_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:background="@drawable/com_mwork_button_click"
+        android:orientation="horizontal">
+
+        <vn.mog.app360.sdk.payment.ui.widget.MworkTextView
+            android:id="@+id/com_mwork_btn_show_details"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:gravity="center|left"
+            android:paddingLeft="20dp"
+            android:layout_centerVertical="true"
+            android:text="@string/com_mwork_info"
+            android:textColor="@android:color/black"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/com_mwork_triangle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/com_mwork_btn_show_details"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:contentDescription="@string/com_mwork_details"
+            android:src="@drawable/com_mwork_ic_down" />
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/com_mwork_des_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:orientation="vertical"></LinearLayout>
+</LinearLayout>

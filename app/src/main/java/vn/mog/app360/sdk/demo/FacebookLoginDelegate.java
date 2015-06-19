@@ -3,9 +3,10 @@ package vn.mog.app360.sdk.demo;
 import android.app.Activity;
 import android.content.Intent;
 
-import vn.mog.app360.sdk.demo.logger.Log;
 import com.facebook.Session;
 import com.facebook.SessionState;
+
+import vn.mog.app360.sdk.demo.logger.Log;
 
 public class FacebookLoginDelegate {
     private static final String TAG = "FacebookLoginDelegate";

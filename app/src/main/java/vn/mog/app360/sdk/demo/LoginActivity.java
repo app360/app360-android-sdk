@@ -11,18 +11,22 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.afollestad.materialdialogs.MaterialDialog;
-import vn.mog.app360.sdk.demo.logger.Log;
 
 import java.io.IOException;
 
 import vn.mog.app360.sdk.App360SDK;
 import vn.mog.app360.sdk.InitListener;
+import vn.mog.app360.sdk.callback.App360Callback;
+import vn.mog.app360.sdk.demo.logger.Log;
 import vn.mog.app360.sdk.scopedid.BuildHelper;
 import vn.mog.app360.sdk.scopedid.Profile;
 import vn.mog.app360.sdk.scopedid.SaveCallback;
 import vn.mog.app360.sdk.scopedid.ScopedUser;
 import vn.mog.app360.sdk.scopedid.SessionManager;
 import vn.mog.app360.sdk.scopedid.SessionService;
+import vn.mog.app360.sdk.scopedid.data.App360Properties;
+import vn.mog.app360.sdk.scopedid.data.Campaign;
+import vn.mog.app360.sdk.scopedid.data.UpdateUrl;
 
 import static vn.mog.app360.sdk.demo.FacebookLoginDelegate.FacebookListener;
 import static vn.mog.app360.sdk.demo.GoogleLoginDelegate.GoogleLoginListener;
@@ -71,7 +75,6 @@ public class LoginActivity extends BaseActivity {
         }
     };
     private final FacebookListener facebookListener = new FacebookListener() {
-
         @Override
         public void onLogin(String accessToken) {
             if (isLinking()) {
@@ -87,7 +90,6 @@ public class LoginActivity extends BaseActivity {
         }
     };
     private final GoogleLoginListener googleLoginListener = new GoogleLoginListener() {
-
         @Override
         public void onLogin(String accessToken) {
             if (isLinking()) {
@@ -101,7 +103,6 @@ public class LoginActivity extends BaseActivity {
         private boolean isLinking() {
             return SessionManager.getCurrentSession() != null;
         }
-
     };
     private App360Adapter adapter;
     private MaterialDialog loginDialog;
@@ -133,7 +134,6 @@ public class LoginActivity extends BaseActivity {
                 SessionService.Session session = SessionManager.getCurrentSession();
                 if (SessionManager.getCurrentSession() == null) {
                     loginDialog = buildLoginDialog().show();
-
                 } else {
                     Log.d(TAG, "Current session: " + session);
 
@@ -143,6 +143,20 @@ public class LoginActivity extends BaseActivity {
 
                     adapter.addProfile(currentUser.getFacebookProfile());
                     adapter.addProfile(currentUser.getGoogleProfile());
+
+                    App360SDK.getUpdateUrl(new App360Callback<UpdateUrl>() {
+                        @Override
+                        public void onSuccess(UpdateUrl updateUrl) {
+                            if (updateUrl != null) {
+                                Log.d(TAG, "Update url " + updateUrl.getUpdateUrl());
+                            }
+                        }
+
+                        @Override
+                        public void onFailure(Throwable t) {
+                            Log.d(TAG, "Failed to retrieve update URL " + t);
+                        }
+                    });
                 }
             }
 
@@ -161,10 +175,8 @@ public class LoginActivity extends BaseActivity {
 
                 if (text.equals("Anonymous")) {
                     SessionManager.createSession(null, new SessionCallback());
-
                 } else if (text.equals("Facebook")) {
                     facebookLoginDelegate.loginFacebook(facebookListener);
-
                 } else if (text.equals("Google+")) {
                     googleLoginDelegate.loginGoogle(googleLoginListener, REQUEST_CODE_PICK_ACCOUNT,
                             REQUEST_CODE_RECOVER_FROM_PLAY_SERVICES_ERROR, REQUEST_CODE_RECOVER_FROM_AUTH_ERROR);
@@ -186,13 +198,17 @@ public class LoginActivity extends BaseActivity {
     }
 
     private void logBuildChannel() {
+
         try {
-            BuildHelper.init(this);
+            App360Properties properties = App360Properties.getProperties(this);
+            Campaign campaign = properties.getCampaign();
+            Log.d(TAG, String.format("Build channel is %s, build sub_channel is %s",
+                    BuildHelper.getChannel(), BuildHelper.getSubChannel()));
+            Log.d(TAG, String.format("Campaign utm_campaign : %s, utm_source is %s, utm_medium is %s, utm_content is %s, utm_term is %s",
+                    campaign.getUtmCampaign(), campaign.getUtmSource(), campaign.getUtmMedium(), campaign.getUtmContent(), campaign.getUtmTerm()));
         } catch (IOException e) {
             Log.e(TAG, "Cannot read build's channel config");
         }
-        Log.d(TAG, String.format("Build channel is %s, build sub_channel is %s",
-                BuildHelper.getChannel(), BuildHelper.getSubChannel()));
     }
 
     @Override
@@ -277,7 +293,6 @@ public class LoginActivity extends BaseActivity {
     }
 
     private class SessionCallback implements SessionManager.SessionCallback {
-
         @Override
         public void onSuccess() {
             SessionService.Session session = SessionManager.getCurrentSession();
@@ -290,10 +305,10 @@ public class LoginActivity extends BaseActivity {
             adapter.addProfile(currentUser.getFacebookProfile());
             adapter.addProfile(currentUser.getGoogleProfile());
         }
+
         @Override
         public void onFailure(Exception e) {
             Log.d(TAG, "onFailure " + e);
         }
-
     }
 }

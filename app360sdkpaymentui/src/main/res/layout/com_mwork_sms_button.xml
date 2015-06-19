@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clickable="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:padding="0dp"
+        android:orientation="horizontal"
+        android:background="@drawable/com_mwork_btn_sms_left">
+
+        <vn.mog.app360.sdk.payment.ui.widget.MworkTextView
+            android:id="@+id/com_mwork_text_number"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1.5"
+            android:background="@drawable/com_mwork_btn_sms_left"
+            android:gravity="center_vertical|center"
+            android:paddingLeft="10dp"
+            android:textColor="@android:color/white"
+            android:textSize="13sp" />
+
+        <vn.mog.app360.sdk.payment.ui.widget.MworkTextView
+            android:id="@+id/com_mwork_text_amount"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/btn_right_new"
+            android:gravity="center"
+            android:textColor="@android:color/white"
+            android:textSize="13sp" />
+    </LinearLayout>
+
+</LinearLayout>

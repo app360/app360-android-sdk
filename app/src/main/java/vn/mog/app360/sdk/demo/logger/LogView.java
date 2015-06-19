@@ -47,7 +47,7 @@ public class LogView extends TextView implements LogNode {
     @Override
     public void println(int priority, String tag, String msg, Throwable tr) {
 
-        
+
         String priorityStr = null;
 
         // For the purposes of this View, we want to print the priority as readable text.

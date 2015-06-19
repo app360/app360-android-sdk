@@ -7,16 +7,26 @@
 
     <uses-sdk
         android:minSdkVersion="14"
-        android:targetSdkVersion="21"/>
+        android:targetSdkVersion="22"/>
 
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <!-- Uncomment to support SMS payments -->
+    <!--<uses-permission android:name="android.permission.SEND_SMS"/>-->
+    <!--<uses-permission android:name="android.permission.READ_PHONE_STATE"/>-->
 
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme">
+
+        <!-- Support tracking advertising campaign -->
+        <receiver android:name="vn.mog.app360.sdk.receiver.CampaignReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER" />
+            </intent-filter>
+        </receiver>
+        <!-- End support tracking advertising campaign -->
 
         <activity
             android:name="com.facebook.LoginActivity"

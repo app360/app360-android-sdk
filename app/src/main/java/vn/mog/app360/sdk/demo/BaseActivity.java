@@ -14,13 +14,13 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import vn.mog.app360.sdk.demo.logger.Log;
 import vn.mog.app360.sdk.demo.logger.LogFragment;
 import vn.mog.app360.sdk.demo.logger.LogWrapper;
 import vn.mog.app360.sdk.demo.logger.MessageOnlyLogFilter;
-
-import java.util.HashMap;
-import java.util.Map;
 
 public abstract class BaseActivity extends ActionBarActivity {
     private static final String TAG = "BaseActivity";

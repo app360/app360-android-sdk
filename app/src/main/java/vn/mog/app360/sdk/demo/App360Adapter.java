@@ -16,9 +16,6 @@ import vn.mog.app360.sdk.scopedid.Profile;
 
 import static android.support.v7.widget.RecyclerView.Adapter;
 
-/**
-* Created by h1volt3 on 1/6/15.
-*/
 class App360Adapter extends Adapter<App360Adapter.ViewHolder> {
     List<Profile> profiles = new ArrayList<>(0);
     private LoginActivity loginActivity;
