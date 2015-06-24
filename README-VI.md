@@ -32,7 +32,7 @@ Mở LoginActivity trong demo project, tìm dòng `App360.initialize("appId", "a
 
 Chạy project. Ứng dụng mô tả cho bạn khả năng cũng như cách tích hợp của App360SDK, bao gồm cả app-scoped ID và payment (thanh toán).
 
-# x bước để tích hợp với App360
+# 7 bước để tích hợp với App360
 
 ## 1. Tạo tài khoản
 

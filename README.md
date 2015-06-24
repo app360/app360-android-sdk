@@ -32,7 +32,7 @@ Open LoginActivity inside demo project, find `App360.initialize("appId", "appSec
 
 Run the project. The app demonstrates capability of App360 SDK, including app-scoped ID and payment.
 
-# x step to integrate with App360
+# 7 step to integrate with App360
 
 ## 1. Create an account
 
