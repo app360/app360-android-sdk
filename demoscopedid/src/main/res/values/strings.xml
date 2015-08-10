@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Demo ScopedID</string>
+
+    <string name="appId">1004015958365193309493</string>
+    <string name="appSecretKey">4QkZUK5MjaOVANqV7Vr4zZB2SdEai1ggtaVibysugqIurO28</string>
+
+    <!--  -->
+    <string name="loading">Loading&#8230;</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    
+    <string name="session_success">Create or re-open session success!</string>
+</resources>

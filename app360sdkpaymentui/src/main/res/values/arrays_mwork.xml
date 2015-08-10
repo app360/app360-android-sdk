@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-
-    <array name="com_mwork_lang">
-        <item>@string/com_mwork_lang_en</item>
-        <item>@string/com_mwork_lang_vn</item>
-    </array>
-
-</resources>
