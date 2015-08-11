@@ -2,7 +2,7 @@
 
 # Giới thiệu
 
-App360SDK cung cấp cách thức đơn giản nhất để quản lý user và tích hợp thanh toán (bao gồm sms, thẻ điện thoại và e-banking) vào ứng dụng của bạn.
+App360SDK cung cấp cách thức đơn giản nhất để quản lý user. Nếu bạn muốn tích hợp thêm các phương thức thanh toán (bao gồm sms, thẻ điện thoại và e-banking), hãy tham khảo thêm tại [đây](https://github.com/app360/app360-payment-android-sdk).
 
 The App360 SDK hỗ trợ Android version 4.0 trở lên.
 
@@ -23,14 +23,17 @@ Project demo tương thích với phiên bản mới nhất của cả Android S
 
 ## Eclipse
 
-Để import project vào Eclipse, chọn _File > Import..._, trong dialog _Import_, chọn _General > Existing projects into workspace_, sau đó trong _Select root directory_, trỏ đến repository. **Select all** projects Eclipse nhận diện ra được, rồi bấm _Finish_. Có khá nhiều thư viện trong  project, nhưng chỉ để dùng cho ứng dụng demo (bao gồm cả Google Play Services để hỗ trợ login qua Google, Facebook SDK để hỗ trợ login qua Facebook, Android support libraries và một số thư viện cho UI).
+Để import project vào Eclipse, chọn _File > Import..._, trong dialog _Import_, chọn _General > Existing projects into workspace_, sau đó trong _Select root directory_, trỏ đến repository. **Select all** projects Eclipse nhận diện ra được, rồi bấm _Finish_. 
 
-![Eclipse import 1](http://i.imgur.com/ryT1Bqk.png)
-![Eclipse import 2](http://i.imgur.com/LvXZzG4.png)
+![Eclipse import](http://i.imgur.com/DBe0LAJ.png)
 
-Mở LoginActivity trong demo project, tìm dòng `App360.initialize("appId", "appSecret", ...)` và thay thể placeholders với cặp key của ứng dụng.
+Kéo `vn.m360.demoscopedid` từ folder `java`  thả vào folder `src` 
 
-Chạy project. Ứng dụng mô tả cho bạn khả năng cũng như cách tích hợp của App360SDK, bao gồm cả app-scoped ID và payment (thanh toán).
+![Drag code](http://i.imgur.com/FSRGiBm.png)
+
+Mở LoginActivity trong demo project, tìm dòng `App360SDK.initialize("appId", "appSecret", ...)` và thay thể placeholders với cặp key của ứng dụng.
+
+Chạy project. Ứng dụng mô tả cho bạn cách tích hợp App360SDK.
 
 # 7 bước để tích hợp với App360
 
