@@ -2,7 +2,7 @@
 
 #Introduction
 
-App360SDK provides easiest way to integrate user management and payment methods (including sms, phone card and e-banking) into your application.
+App360SDK provides easiest way to integrate user management into your application. If you want to intergate payment method like SMS, Phone card, E-banking payment, you can use [App360PaymentSDK](https://github.com/app360/app360-payment-android-sdk)
 
 The App360 SDK supports Android version 4.0 and above.
 
