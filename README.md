@@ -23,12 +23,16 @@ To import the project into Android Studio, close the current project, choose _Op
 
 ## Eclipse
 
-To import the project into Eclipse, choose _File > Import..._, then inside the _Import_ dialog, choose _General > Existing projects into workspace_, then in _Select root directory_, browse to the repository. **Select all** projects that Eclipse detected, then click _Finish_. There're a lot of library projects, but they're necessary to support the demo (including Google Play Services for Google login, Facebook SDK for Facebook login, Android support libraries and some UI libraries).
+To import the project into Eclipse, choose _File > Import..._, then inside the _Import_ dialog, choose _General > Existing projects into workspace_, then in _Select root directory_, browse to the repository. **Select all** projects that Eclipse detected, then click _Finish_. 
 
-![Eclipse import 1](http://i.imgur.com/ryT1Bqk.png)
-![Eclipse import 2](http://i.imgur.com/LvXZzG4.png)
+![Eclipse import](http://i.imgur.com/DBe0LAJ.png)
 
-Open LoginActivity inside demo project, find `App360.initialize("appId", "appSecret", ...)` line and replace the placeholders with your application credentials.
+Drag package `vn.m360.demoscopedid` from `java` folder to `src` folder
+
+![Drag code](http://i.imgur.com/FSRGiBm.png)
+
+
+Open LoginActivity inside demo project, find `App360SDK.initialize("appId", "appSecret", ...)` line and replace the placeholders with your application credentials.
 
 Run the project. The app demonstrates capability of App360 SDK, including app-scoped ID and payment.
 
