@@ -134,6 +134,11 @@ Channeling is done per app-scoped ID. In other words, the channel of a payment e
 - If you got any trouble, checkout the [FAG page](http://docs.app360.vn/?page_id=228) or send a support request
 
 #Release Notes
+## Version 1.5.0
+
+** Release date **: 17 March 2016
+- Add App360SDK.setSubChannel() to set sub_channel when distribute app by Facebook.
+- Remove gson and retrofit to integrate more easy.
 
 ## Version 1.4.0
 
