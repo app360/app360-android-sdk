@@ -134,6 +134,13 @@ Channeling đã được hỗ trợ qua app-scoped ID. Nói theo cách khác, ch
 
 #Release Notes
 
+## Version 1.5.0
+
+** Release date **: 19 Jun 2015
+
+- Thêm hàm App360SDK.setSubChannel() để set sub channel khi phân phối app bằng Facebook.
+- Loại bỏ thư viện gson và retrofit để tích hợp dễ dàng hơn
+
 ## Version 1.4.0
 
 ** Release date **: 19 Jun 2015
