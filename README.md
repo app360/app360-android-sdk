@@ -2,7 +2,7 @@
 
 #Introduction
 
-App360SDK provides easiest way to integrate user management and payment methods (including sms, phone card and e-banking) into your application.
+App360SDK provides easiest way to integrate user management into your application. If you want to intergate payment method like SMS, Phone card, E-banking payment, you can use [App360PaymentSDK](https://github.com/app360/app360-payment-android-sdk)
 
 The App360 SDK supports Android version 4.0 and above.
 
@@ -23,12 +23,16 @@ To import the project into Android Studio, close the current project, choose _Op
 
 ## Eclipse
 
-To import the project into Eclipse, choose _File > Import..._, then inside the _Import_ dialog, choose _General > Existing projects into workspace_, then in _Select root directory_, browse to the repository. **Select all** projects that Eclipse detected, then click _Finish_. There're a lot of library projects, but they're necessary to support the demo (including Google Play Services for Google login, Facebook SDK for Facebook login, Android support libraries and some UI libraries).
+To import the project into Eclipse, choose _File > Import..._, then inside the _Import_ dialog, choose _General > Existing projects into workspace_, then in _Select root directory_, browse to the repository. **Select all** projects that Eclipse detected, then click _Finish_. 
 
-![Eclipse import 1](http://i.imgur.com/ryT1Bqk.png)
-![Eclipse import 2](http://i.imgur.com/LvXZzG4.png)
+![Eclipse import](http://i.imgur.com/DBe0LAJ.png)
 
-Open LoginActivity inside demo project, find `App360.initialize("appId", "appSecret", ...)` line and replace the placeholders with your application credentials.
+Drag package `vn.m360.demoscopedid` from `java` folder to `src` folder
+
+![Drag code](http://i.imgur.com/FSRGiBm.png)
+
+
+Open LoginActivity inside demo project, find `App360SDK.initialize("appId", "appSecret", ...)` line and replace the placeholders with your application credentials.
 
 Run the project. The app demonstrates capability of App360 SDK, including app-scoped ID and payment.
 
@@ -130,6 +134,11 @@ Channeling is done per app-scoped ID. In other words, the channel of a payment e
 - If you got any trouble, checkout the [FAG page](http://docs.app360.vn/?page_id=228) or send a support request
 
 #Release Notes
+## Version 1.5.0
+
+** Release date **: 17 March 2016
+- Add App360SDK.setSubChannel() to set sub_channel when distribute app by Facebook.
+- Remove gson and retrofit to integrate more easy.
 
 ## Version 1.4.0
 
